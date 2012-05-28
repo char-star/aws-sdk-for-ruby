@@ -126,8 +126,9 @@ module AWS
     module Http
       AWS.register_autoloads(self) do
         autoload :Handler,         'handler'
-        autoload :NetHttpHandler,  'net_http_handler'
-        autoload :HTTPartyHandler, 'httparty_handler' # non-standard inflection
+#        autoload :NetHttpHandler,  'net_http_handler'
+        autoload :NetHttpHandler,  'stub_http_handler'
+#        autoload :HTTPartyHandler, 'httparty_handler' # non-standard inflection
         autoload :Request,         'request'
         autoload :Response,        'response'
       end
@@ -136,11 +137,11 @@ module AWS
   end
 
   # the http party handler should still be accessible from its old namespace
-  module Http
-    AWS.register_autoloads(self, 'aws/core/http') do
-      autoload :HTTPartyHandler, 'httparty_handler'
-    end
-  end
+#  module Http
+#    AWS.register_autoloads(self, 'aws/core/http') do
+#      autoload :HTTPartyHandler, 'httparty_handler'
+#    end
+#  end
 
   class << self
 

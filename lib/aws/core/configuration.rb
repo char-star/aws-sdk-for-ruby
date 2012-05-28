@@ -405,7 +405,7 @@ module AWS
   
       add_option :session_token
 
-      add_option :http_handler, Http::NetHttpHandler.new
+      add_option :http_handler, Http::StubHttpHandler.new
   
       add_option :logger
 
